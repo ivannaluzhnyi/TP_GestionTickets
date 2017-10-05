@@ -10,15 +10,37 @@
         <?php
         
         if(isset($lesTickets)==true){
-            
-        foreach ($lesTickets as $tickets){
-            echo"<p> id -".$tickets->idTicket." - nom".$tickets->nomTicket." ";
+        ?> 
+        <table>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Nom Ticket
+                </th>
+                <th>
+                    Date Ticket
+                </th>
+                <th>
+                    Niveau Ticket
+                </th>
+                <th>
+                    idUser
+                </th>
+            </tr>
+            <?php
+                foreach ($lesTickets as $tickets){
+                    echo "<tr>"
+                            . "<td>".$tickets->idTicket."</td>"
+                            . "<td>".$tickets->nomTicket."</td>"
+                            . "<td>".$tickets->dateTicket."</td>"
+                            . "<td>".$tickets->niveauTicket."</td>"
+                            . "<td>".$tickets->idUser."</td>"
+                       . "</tr>";
+                }
         }
-        }
-        
-         if(isset($loginUser) && isset($pwdUser)){
-             echo"lol";
-         }
         ?>
+        </table>
     </body>
 </html>
