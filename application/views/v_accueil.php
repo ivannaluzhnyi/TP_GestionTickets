@@ -9,7 +9,7 @@
     <body>
         <h1>Gestion tickets ==> connexion</h1>
         <div id="image">
-            <img src="<?php echo base_url('images/Securite.jpg'); ?>" />
+            <img src="<?php echo base_url().'images/Securite.jpg'; ?>" />
         </div>
      
      <!--   <form method="post" action="index.php/Ctrl_GestionTickets/check">
@@ -24,7 +24,7 @@
         <br>
         <?php
         // Open form and set URL for submit form
-            echo form_open('/Ctrl_GestionTickets/check');
+            echo form_open('Ctrl_GestionTickets/check');
             echo form_label('User login :', 'loginUser');
             echo form_input('loginUser',set_value('loginUser'));
             echo form_label('User password:', 'pwdUser');
@@ -42,12 +42,12 @@
 
 <?php echo form_close();?>
 
-            <?php if(isset($loginUser) && isset($pwdUser)){
+            <?php if(isset($erreur)){
             echo "<div id='content_result'>";
-            echo "<h3 id='result_id'>You have submitted these values</h3><br/><hr>";
+            echo "<h3 id='result_id'>".$erreur."</h3><br/><hr>";
             echo "<div id='result_show'>";
-            echo "<label class='label_output'>Entered login : </label>".$loginUser;
-            echo "<label class='label_output'>Entered password: </label>".$pwdUser;
+            echo "<label class='label_output'>Entered login : </label>";
+            echo "<label class='label_output'>Entered password: </label>";
             echo "<div>";
             echo "</div>";
             } ?>
